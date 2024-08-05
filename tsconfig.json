@@ -1,10 +1,22 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./build",
+    "rootDir": "./server",
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "sourceMap": true,
     "strict": true,
     "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": true,
     "types": ["node"]
-  }
+  },
+  "include": ["./server/**/*.ts"],
+  "exclude": ["node_modules", "dist", "build"]
 }
