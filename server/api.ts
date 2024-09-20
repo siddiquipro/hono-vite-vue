@@ -1,20 +1,22 @@
 import { Hono } from "hono";
-import { logger } from "hono/logger";
 
-const api = new Hono().basePath("/api");
-
-api.use(logger());
+const api = new Hono();
 
 api.get("/", (c) => {
   return c.json({ message: "Hello World" });
 });
 
 api.get("/home", (c) => {
-  return c.json({ message: "Hello Home" });
+  return c.json({ message: "Hello Home Page Again" });
 });
 
 api.get("/about", (c) => {
-  return c.json({ message: "Hello About" });
+  return c.json({ message: "Hello About Page" });
+});
+
+api.get("/*", (c) => {
+  c.status(404);
+  return c.json({ message: "Not Found" });
 });
 
 export default api;

@@ -27,5 +27,9 @@ lerna-debug.log*
 # misc
 .DS_Store
 
+
+## Public assets build by vite
 dist
+
+## hono Server Build
 build
